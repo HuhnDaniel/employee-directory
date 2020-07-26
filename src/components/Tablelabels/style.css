@@ -1,0 +1,14 @@
+.labels {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.label-name {
+    display: inline;
+    flex: 1;
+    background-color: rgb(190, 223, 235);
+    border: 1px solid black;
+    padding: .5rem;
+}
