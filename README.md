@@ -9,7 +9,7 @@ A web application where a table of employees is rendered and can be sorted by ca
 - [Contributing](#contributing)
 - [Author](#author)
 ## Deployed Application
-https://dashboard.heroku.com/apps/boiling-oasis-58335/settings
+https://boiling-oasis-58335.herokuapp.com/
 ## Installation and Running
 To install necessary dependencies, run the following command in the root folder of this application
 ```
