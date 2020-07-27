@@ -1,12 +1,16 @@
 import React from "react";
-import TableLabels from "../Tablelabels";
+import SearchBar from "../SearchBar";
+import TableLabels from "../TableLabels";
+import TableContents from "../TableContents";
 import "./style.css";
 
-function Table() {
+function Table({ toDisplay }) {
     return (
         <main className="wrapper">
+            <SearchBar />
             <div className="table">
                 <TableLabels />
+                <TableContents toDisplay={toDisplay} />
             </div>
         </main>
     );
