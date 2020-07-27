@@ -4,10 +4,10 @@ import TableLabels from "../TableLabels";
 import TableContents from "../TableContents";
 import "./style.css";
 
-function Table({ toDisplay }) {
+function Table({ toDisplay, handleFormSubmit, handleInputChange }) {
     return (
         <main className="wrapper">
-            <SearchBar />
+            <SearchBar handleFormSubmit={handleFormSubmit} handleInputChange={handleInputChange} />
             <div className="table">
                 <TableLabels />
                 <TableContents toDisplay={toDisplay} />

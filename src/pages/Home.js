@@ -10,6 +10,10 @@ class Home extends Component {
         toDisplay: []
     };
 
+    handleInputChange = event => {
+      this.setState({ search: event.target.value });
+    };
+
     componentDidMount() {
         API.getUsers()
             .then(({ data }) => {
@@ -23,15 +27,17 @@ class Home extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-
         
+        this.setState({
+            toDisplay: this.state.users.filter(user => user.name.first.toLowerCase().includes(this.state.search.toLowerCase()) || user.name.last.toLowerCase().includes(this.state.search.toLowerCase()))
+        });
     }
 
     render() {
         return (
             <div>
                 <Header />
-                <Table toDisplay={this.state.toDisplay} />
+                <Table toDisplay={this.state.toDisplay} handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange} />
             </div>
         );
     }
