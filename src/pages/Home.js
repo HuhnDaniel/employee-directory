@@ -7,7 +7,8 @@ class Home extends Component {
     state = {
         search: "",
         users: [],
-        toDisplay: []
+        toDisplay: [],
+        sort: "none"
     };
 
     handleInputChange = event => {
@@ -33,11 +34,25 @@ class Home extends Component {
         });
     }
 
+    handleButtonClick = () => {
+        if (this.state.sort === "none" || this.state.sort === "down") {
+            this.setState({
+                sort: "up",
+                toDisplay: this.state.toDisplay.sort((a, b) => a.dob.age - b.dob.age)
+            });
+        } else {
+            this.setState({
+                sort: "down",
+                toDisplay: this.state.toDisplay.sort((a, b) => b.dob.age - a.dob.age)
+            });
+        }
+    }
+
     render() {
         return (
             <div>
                 <Header />
-                <Table toDisplay={this.state.toDisplay} handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange} />
+                <Table toDisplay={this.state.toDisplay} handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange} handleButtonClick={this.handleButtonClick} />
             </div>
         );
     }
