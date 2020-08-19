@@ -29,4 +29,4 @@ No contributions will be accepted at this time
 ## Author
 Daniel Moody-Huhn  
   -https://github.com/HuhnDaniel  
-  -https://danielmoodyhuhn.herokuapp.com
+  -https://huhndaniel.github.io
